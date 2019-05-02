@@ -1,0 +1,40 @@
+﻿@page
+@model OnlineRental.Pages.ConstructionEquipment.ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h2>List of Equipments</h2>
+<table class="table">
+    <tr>
+        <th>
+            Equipments
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            Rent Period (Days)
+        </th>
+    </tr>
+    @foreach (var equipment in Model.Equipments)
+    {
+        <tr>
+            <td>
+                @equipment.Name
+            </td>
+            <td>
+                @equipment.Category
+            </td>
+            <td>               
+                <a class="btn btn-lg"
+                   asp-page="./ShoppingCart" asp-route-equipmentId="@equipment.Id" >
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+
+</table>
+

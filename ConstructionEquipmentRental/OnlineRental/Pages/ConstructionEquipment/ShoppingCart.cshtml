@@ -1,0 +1,44 @@
+﻿@page "{equipmentId:int}"
+@model OnlineRental.Pages.ConstructionEquipment.ShoppingCartModel
+@{
+    ViewData["Title"] = "ShoppingCart";
+}
+
+<h2>ShoppingCart</h2>
+
+<h3>Customer Details</h3>
+<div>
+    Name: @Model.Customer.Name
+</div>
+<div>
+    Contact Number: @Model.Customer.ContactNumber
+</div>
+<div>
+    Shipping Address: @Model.Customer.ShippingAddress
+</div>
+
+<h3>Order List</h3>
+
+<div>
+    Equipment: @Model.Equipment.Name
+</div>
+<div>
+    Category: @Model.Equipment.Category
+</div>
+
+<form method="post">
+
+<input type="hidden" asp-for="Equipment.Id" />
+<div class="form-group">
+    <label asp-for="Equipment.RentDays"></label>
+    <input asp-for="Equipment.RentDays" class="form-control" />
+</div>
+
+
+<button type="submit" class="btn btn-primary">Check Out</button>
+</form>
+
+
+
+
+
